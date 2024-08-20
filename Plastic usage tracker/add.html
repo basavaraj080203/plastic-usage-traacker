@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastic Usage Tracker - Add Usage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .sidebar h2 {
+            margin-bottom: 40px;
+            font-size: 22px;
+            text-align: center;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 18px;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 40px;
+        }
+        .main-content h1 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            text-align: center;
+        }
+        .form-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            margin: 0 auto;
+        }
+        form input[type="text"], form input[type="number"], form input[type="date"], form select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        form button:hover {
+            background-color: #218838;
+        }
+        .success-message {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <h2>Plastic Usage Tracker</h2>
+        <a href="./home.html">Dashboard</a>
+        <a href="./add.html">Add Usage</a>
+        <a href="./goal/goal.html">Goal Setting</a>
+        <a href="./profile-page/profile.html">Profile</a>
+        <a href="./Educational-page/index.html">Educational Resources</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Add Plastic Usage</h1>
+        <div class="form-container">
+            <form id="plasticUsageForm">
+                <input type="text" id="itemName" name="itemName" placeholder="Item Name" required>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Bottles">Bottles</option>
+                    <option value="Bags">Bags</option>
+                    <option value="Containers">Containers</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="number" id="quantity" name="quantity" placeholder="Quantity" min="1" required>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Log Usage</button>
+            </form>
+            <div class="success-message" id="successMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('plasticUsageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const itemName = document.getElementById('itemName').value;
+            const category = document.getElementById('category').value;
+            const quantity = document.getElementById('quantity').value;
+            const date = document.getElementById('date').value;
+
+            document.getElementById('successMessage').textContent = `Successfully logged: ${quantity} ${category}(s) - ${itemName} on ${date}.`;
+            document.getElementById('plasticUsageForm').reset();
+        });
+    </script>
+</body>
+</html>

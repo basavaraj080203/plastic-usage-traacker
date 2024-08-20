@@ -1,0 +1,109 @@
+
+.sidebar {
+    height: 100vh; 
+    width: 250px; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    background-color: #2c3e50; 
+    padding-top: 20px;
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar img {
+    width: 100px; 
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.sidebar a:hover {
+    background-color: #1e2a38; 
+}
+
+.sidebar a.active {
+    background-color: #1e2a38; 
+    color: white;
+}
+
+.main-content {
+    margin-left: 250px; 
+    padding: 20px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #1e2a38;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.resources-section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card {
+    background-color: #e7f3e7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.resource-card h3 {
+    margin: 0 0 10px 0;
+}
+
+.resource-card a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #1e2a38;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: static;
+    width: 100%;
+    bottom: 0;
+}
+
+.sidebar .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo h2 {
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+}
